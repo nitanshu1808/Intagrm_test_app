@@ -5,18 +5,34 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Welcome to Instgram Test App</a>
+      </div>
 
-<%= yield %>
-<div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <%= link_to "Sign in with instagram", "/auth/instagram?client_id=#{ENV['INSTAGRAM_ID'].to_param}", id: "sign_in" %>
-  <% end %>
-</div>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active " >
+          <% if current_user %>
+              Welcome <strong><%= current_user.name %></strong>!
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+              <%= link_to "Sign in with instagram", "/auth/instagram?client_id=#{ENV['INSTAGRAM_ID'].to_param}", id: "sign_in" %>
+                </li>
+            <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <%= yield %>
 </body>
 </html>

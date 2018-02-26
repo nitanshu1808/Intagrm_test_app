@@ -1,2 +1,15 @@
-<h1>Feeds#index</h1>
-<p>Find me in app/views/feeds/index.html.erb</p>
+<div class = "container">
+  <h1 class="col-md-12">User's Pictures</h1>
+  <% if @media  %>
+    <% @media.in_groups_of(3).each do |group| %>
+      <div class="row row-spacing">
+        <% group.compact.each do |media| %>
+          <div class="col-md-4">
+            <%= image_tag(fetch_image_url(media), alt: fetch_caption(media), class: 'thumbimg-deco') %>
+            <a href="#" class="text-deco">The formal</a>
+          </div><!-- <End of col-md-4> -->
+        <% end %>
+      </div><!-- <End of row> -->
+    <% end %>
+  <% end %>
+</div><!-- <End of container> -->

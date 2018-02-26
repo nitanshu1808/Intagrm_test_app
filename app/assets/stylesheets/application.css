@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+h1{
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 2.5em;
+}
+#welcome-txt{
+    margin: 40px auto;
+}
+body{
+    background-image: url("nature.JPG");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.thumbimg-deco{
+    width:  100%;
+    height: 275px;
+    display: block;
+    position: relative;
+}
+.row-spacing{
+    margin: 30px auto;
+}
