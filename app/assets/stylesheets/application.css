@@ -19,9 +19,6 @@ h1{
     font-style: italic;
     font-size: 2.5em;
 }
-#welcome-txt{
-    margin: 40px auto;
-}
 body{
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -43,7 +40,13 @@ body{
   padding: 16px 32px;
 }
 
-
+.show-caption{
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
 .col-md-4:hover .thumbimg-deco {
   opacity: 0.3;
@@ -75,4 +78,9 @@ body{
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.button-align{
+  margin: 30px 50%;
+  position: relative;
 }

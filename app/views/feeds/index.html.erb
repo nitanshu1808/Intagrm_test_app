@@ -1,19 +1,28 @@
 <div class = "container">
-  <h1 class="col-md-12">User's Pictures</h1>
-  <% if @media  %>
-    <% @media.in_groups_of(3).each do |group| %>
-      <div class="row row-spacing">
-        <% group.compact.each do |media| %>
-          <div class="col-md-4">
+  <% if current_user %>
+    <h1 class="col-md-12">User's Pictures</h1>
+    <% if @media  %>
+      <% @media.in_groups_of(3).each do |group| %>
+        <div class="row row-spacing">
+          <% group.compact.each do |media| %>
+            <div class="col-md-4">
 
-            <%= image_tag(fetch_image_url(media), alt: fetch_caption(media), class: 'thumbimg-deco') %>
-            <div class="middle">
-              <div class="text">likes: <%= get_like_count(media) %> Comments: <%= get_comment_count(media) %></div>
-            </div>
-            <a href="#" class="text-deco">The formal</a>
-          </div><!-- <End of col-md-4> -->
-        <% end %>
-      </div><!-- <End of row> -->
+              <%= image_tag(fetch_image_url(media), alt: fetch_caption(media), class: 'thumbimg-deco') %>
+              <div class="middle">
+                <div class="text">likes: <%= get_like_count(media) %> Comments: <%= get_comment_count(media) %></div>
+              </div>
+              <span class="show-caption"><%= fetch_caption(media) %></span>
+              <!-- <div class="row">
+                <div class="col-md-12">
+                </div>
+              </div> -->
+            </div><!-- <End of col-md-4> -->
+          <% end %>
+        </div><!-- <End of row> -->
+      <% end %>
     <% end %>
+    <%= link_to "Next", feeds_index_path(max_id: @max_id), class: 'button-align btn btn-success' if @max_id %>
+  <% else %>
+    <h1>Welcome to Test App</h1>
   <% end %>
-</div><!-- <End of container> -->
+  </div><!-- <End of container> -->
