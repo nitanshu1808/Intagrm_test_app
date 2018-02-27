@@ -14,12 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-
-$(document).ready(function(){
-    $(".thumbimg-deco").hover(function(){
-        $( this ).fadeOut( 100000 );
-        }, function(){
-        $( this ).fadeOut( 20000 );
-    });
-});

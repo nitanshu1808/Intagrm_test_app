@@ -5,7 +5,11 @@
       <div class="row row-spacing">
         <% group.compact.each do |media| %>
           <div class="col-md-4">
+
             <%= image_tag(fetch_image_url(media), alt: fetch_caption(media), class: 'thumbimg-deco') %>
+            <div class="middle">
+              <div class="text">likes: <%= get_like_count(media) %> Comments: <%= get_comment_count(media) %></div>
+            </div>
             <a href="#" class="text-deco">The formal</a>
           </div><!-- <End of col-md-4> -->
         <% end %>
